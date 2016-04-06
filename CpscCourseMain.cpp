@@ -29,6 +29,9 @@ void fillStudents(ifstream& inStudent, vector<Student>& stu)
   string stuLast, stuFirst, classStanding;
   int term, creditHours;
   float GPA;
+
+  ofstream output;
+  output.open("output.txt");
   
  inStudent.open("studentInfo.txt");
  if(inStudent.is_open())
@@ -48,9 +51,12 @@ void fillStudents(ifstream& inStudent, vector<Student>& stu)
    inStudent >> creditHours;
    stu[x].setCurCredit(creditHours);
    inStudent.ingore(1,'\n');
-   
-  }
+  
 
+
+    output << stu[x].printInfo() 
+
+  
 
  }
 
