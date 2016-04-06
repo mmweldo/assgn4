@@ -1,4 +1,5 @@
 #include "Student.h"
+
 Student::Student()
 {
 	classStanding = "";
@@ -18,7 +19,7 @@ Student::~Student()
 }
 void Student::setGPA(float gpa)
 {
-	if(gpa > 0 && <= 4)
+	if(gpa > 0 && gpa <= 4)
 	{
 		GPA = gpa;
 	}
@@ -54,15 +55,15 @@ int Student::getCurCredit()
 }
 int Student::getMaxCredit(float g, string c)
 {
-	if(credit >= 0 && credit < 18)
+	if(curCredit >= 0 && curCredit < 18)
 	{
-		if(classStanding == "Freshman")
+		if(c == "Freshman")
 		{
-			if(credit > 15)
+			if(curCredit > 15)
 			{
 				return 15;
 			}
-			else if(GPA < 2.5 && credit > 12)
+			else if(g < 2.5 && curCredit > 12)
 			{
 				return 12;
 			}
@@ -70,11 +71,11 @@ int Student::getMaxCredit(float g, string c)
 				return 15;
 		}
 		else
-			if(credit > 18 && credit >= 2.5)
+			if(curCredit > 18 && curCredit >= 2.5)
 			{
 				return 18;
 			}
-			else if(gpa < 2.5 && credit > 12)
+			else if(g < 2.5 && curCredit > 12)
 			{
 				return 12;
 			}
@@ -94,8 +95,8 @@ void Student::printInfo()
 		count++;
 	}
 	cout << endl << setw(20) << "Name:"
-		 << Person::lastName << ","
-		 << Person::firstName << endl;
+		 <<  Person.getLastName() << ","
+		 <<  Person.getFirstName() << endl;
 	cout << setw(20) << "GPA:"
 		 << GPA << endl;
 	cout << setw(20) << "Category:"

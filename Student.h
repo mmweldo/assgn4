@@ -1,6 +1,13 @@
 #ifndef STUDENT_H
 #define STUDENT_H
 
+using namespace std;
+
+#include <iostream>
+#include <string>
+#include <iomanip>
+#include "Person.h"
+
 class Student : public Person {
 	private:
 		/*Student's GPA*/
