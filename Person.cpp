@@ -1,38 +1,40 @@
 #include <iostream>
 #include "Person.h"
+#include <string>
+#include <cstring>
 using namespace std;
 
-Person()
+Person::Person()
 {
    firstName = " ";
    lastName = " ";
 }
-Person(string first, string last)
+Person::Person(string first, string last)
 {
    firstName = first;
    lastName = last;
 }
-~Person()
+Person::~Person()
 {
    cout << "Person object is being destructed!!!" << endl;
 }
-void setFirstName(string firstn)
+void Person::setFirstName(string firstn)
 {
    firstName = firstn;
 }
-void setLastName(string lastn)
+void Person::setLastName(string lastn)
 {
    lastName = lastn;
 }
-string getFirstName()
+string Person::getFirstName()
 {
    return firstName;
 }
-string getLastName()
+string Person::getLastName()
 {
    return lastName;
 }
-void printPInfo()
+void Person::printPInfo()
 {
-   cout << firstName << "," << lastName 
+   cout << firstName << "," << lastName;
 }

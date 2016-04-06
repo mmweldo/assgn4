@@ -1,8 +1,11 @@
 #include "Student.h"
 #include "CpscCourse.h"
+#include "Person.h"
 #include <vector>
 #include <iostream>
 #include <fstream>
+#include <string>
+#include <cstring>
 using namespace std;
 
 /*Prototypes */
@@ -41,11 +44,11 @@ void fillStudents(ifstream& inStudent, vector<Student>& stu)
   
   for(int x= 0; x < term; x++)
   {
-   stu.push_back(newStudent);
-
-   stu[x].setLastName(getline(inStudent,stuLast)));
-   stu[x].setFirstName(getline(inStudent,stuFirst)));
-   inStudent << GPA;
+   stu.push_back(Student);
+   
+   stu[x].setLastName(getline(inStudent,stuLast));
+   stu[x].setLastName(getline(inStudent,stuFirst));
+   inStudent >> GPA;
    stu[x].setGPA(GPA);
    stu[x].setClassStanding(getline(inStudent,classStanding)));
    inStudent >> creditHours;
@@ -54,15 +57,10 @@ void fillStudents(ifstream& inStudent, vector<Student>& stu)
   
 
 
-    output << stu[x].printInfo() 
-
-  
-
+    output << stu[x].printInfo();
+   }
  }
-
-
 }
-
 
 void fillCpscCourse(ifstream& in, vector <CpscCourse>& course) 
 {
