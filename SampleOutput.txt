@@ -1,0 +1,53 @@
+SAMPLE OUTPUT:
+***********************************************
+Name: Barnes,Jason
+GPA: 2.9
+Category: Junior
+Maximum Credit: 18
+Current Credit: 12
+***********************************************
+***********************************************
+Name: Allen,Britney
+GPA: 3.5
+Category: Sophmore
+Maximum Credit: 18
+Current Credit: 9
+***********************************************
+***********************************************
+Name: Blisnuk,Ali
+GPA: 4
+Category: Senior
+Maximum Credit: 18
+Current Credit: 12
+***********************************************
+***********************************************
+Name: Randall,Thomas
+GPA: 1.5
+Category: Freshman
+Maximum Credit: 12
+Current Credit: 6
+***********************************************
+***********************************************
+Course Name: Cpsc1010
+Course Number: 1010
+Course Section: 1
+Available Seats: 45
+Open Seats: 45
+Course ID 0
+***********************************************
+***********************************************
+Course Name: Cpsc1020
+Course Number: 1020
+Course Section: 1
+Available Seats: 78
+Open Seats: 78
+Course ID 1
+***********************************************
+***********************************************
+Course Name: Cpsc2150
+Course Number: 2150
+Course Section: 3
+Available Seats: 50
+Open Seats: 50
+Course ID 2
+***********************************************
