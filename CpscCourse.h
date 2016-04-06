@@ -1,6 +1,9 @@
 #ifndef CPSCCOURSE_H
 #define CPSCCOURSE_H
 
+#include <string>
+using namespace std;
+
 /*This class holds the information about the cpsc courses*/
 class CpscCourse {
 	private:
@@ -16,28 +19,28 @@ class CpscCourse {
 		CpscCourse();
 
 		//Parameterized Constructor
-		CpscCourse(string, int, int, int, int);
+		CpscCourse(string cName, int cNum, int cSect, int aSeats, int oSeats);
 
 		/*Destructors*/
 		~CpscCourse();
 
 		/*Setters*/
-		void setCourseName(string);
-		void setCourseNum(int);
-		void setCourseSect(int);
-		void setAvailSeats(int);
-		void setOpenSeats(int);
+		void setCourseName(string cName);
+		void setCourseNum(int cNum);
+		void setCourseSect(int cSect);
+		void setAvailSeats(int aSeats);
+		void setOpenSeats(int oSeats);
 
 		/*Getters*/
 		string getCourseName();
 		int getCourseNum();
 		int getCourseSect();
-		int getAvailSeat();
+		int getAvailSeats();
 		int getOpenSeats();
 
 		/*Member Functions (Methods)*/
 		void printInfo();
-		static int courseID;
+		//static int courseID;
 };
 
 #endif
