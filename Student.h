@@ -1,3 +1,6 @@
+#ifndef STUDENT_H
+#define STUDENT_H
+
 class Student : public Person {
 	private:
 		/*Student's GPA*/
@@ -33,3 +36,5 @@ class Student : public Person {
 		void printInfo();
 
 };
+
+#endif

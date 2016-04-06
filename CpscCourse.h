@@ -1,3 +1,6 @@
+#ifndef CPSCCOURSE_H
+#define CPSCCOURSE_H
+
 /*This class holds the information about the cpsc courses*/
 class CpscCourse {
 	private:
@@ -36,3 +39,5 @@ class CpscCourse {
 		void printInfo();
 		static int courseID;
 };
+
+#endif
