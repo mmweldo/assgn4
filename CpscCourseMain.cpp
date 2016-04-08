@@ -17,11 +17,16 @@ int main() {
       CpscCourse and Student*/
       vector <Student> studentInfo;
       vector <CpscCourse> courseInfo;
-	
+
+      ifstream inInfo("studentInfo.txt");
+	    ofstream outInfo("output.txt");
+
 	
 	/*Call fillStudents and fill CpscCourse */
-  fillStudents(studentInfo, studentInfo);
+  fillStudents(inInfo,studentInfo);
 	
+      inInfo.close();
+      outInfo.close();
 
 	return 0;	
 }
@@ -33,13 +38,7 @@ void fillStudents(ifstream& inStudent, vector<Student>& stu)
   int term, creditHours;
   float GPA;
 
-  ofstream outInfo;
-  outInfo.open("output.txt");
-  
- inStudent.open("studentInfo.txt");
- if(inStudent.is_open())
- {
-
+  ofstream outInfo("output.txt");
   inStudent >> term;
   
   for(int x= 0; x < term; x++)
@@ -63,12 +62,8 @@ void fillStudents(ifstream& inStudent, vector<Student>& stu)
   
 
 
-    stu[x].printInfo();
-   }
- }
-
- inStudent.close();
- outInfo.close();
+     stu[x].printInfo();
+  }
 }
 
 
