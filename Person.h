@@ -1,5 +1,9 @@
 #ifndef PERSON_H
 #define PERSON_H
+#include <string>
+#include <cstring>
+
+using namespace std;
 
 class Person {
 	private:
@@ -9,7 +13,7 @@ class Person {
 	public:
 		/*constructors and destructors*/
 		Person();
-		Person(string, string);
+		Person(string first, string last);
 		~Person();
 		
 		/*setters and getters*/
@@ -21,5 +25,4 @@ class Person {
 		/*Member Functions (Methods)*/
 		void printPInfo();
 };
-
 #endif
