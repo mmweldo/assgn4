@@ -1,57 +1,150 @@
-static int courseID;
-CpscCourse()
-{
+#include "CpscCourse.h"
+#include <iostream>
+#include <iomanip>
+#include <string>
+using namespace std;
 
-}
-CpscCourse(string, int, int, int, int)
-{
+//Initialize static CourseID
+static int courseID = 0;
 
-}
-~CpscCourse()
+//Default Constructor
+CpscCourse::CpscCourse()
 {
-
+    courseName = "Cpsc 0000";
+    courseNum = 0;
+    courseSect = 0;
+    availSeats = 0;
+    openSeats = 0;
 }
-void setCourseName(string)
+
+//Overloaded Constructor
+CpscCourse::CpscCourse(string cName, int cNum, int cSect, int aSeats, int oSeats)
 {
-
+    //Increment CourseID everytime new object is created
+    courseID++;
+    
+    setCourseName(cName);
+    
+    if(cNum < 0)
+    {
+        cout << "Invalid Course number entered." << endl;
+    }
+    else
+    {
+        setCourseNum(cNum);
+    }
+    
+    if(cSect < 0)
+    {
+        cout << "Invalid Section number entered." << endl;
+    }
+    else
+    {
+        setCourseSect(cSect);
+    }
+    
+    if(aSeats < 0)
+    {
+        cout << "Invalid number of available seats entered." << endl;
+    }
+    else
+    {
+        setAvailSeats(aSeats);
+    }
+    
+    if(oSeats < 0)
+    {
+        cout << "Invalid number of open seats entered.." << endl;
+    }
+    else
+    {
+        setOpenSeats(oSeats);
+    }
 }
-void setCourseNum(int)
+
+//Destructor
+CpscCourse::~CpscCourse()
 {
-
+    cout << "CpscCourse Object is destroyed." << endl;
 }
-void setCourseSect(int)
+
+//Setters
+
+//Sets Course Name
+void CpscCourse::setCourseName(string cName)
 {
-
+    courseName = cName;
 }
-void setAvailSeats(int)
+
+//Sets Course Number
+void CpscCourse::setCourseNum(int cNum)
 {
-
+    courseNum = cNum;
 }
-void setOpenSeats(int)
+
+//Sets Course Section
+void CpscCourse::setCourseSect(int cSect)
 {
-
+    courseSect = cSect;
 }
-string getCourseName()
+
+//Sets Available Seats
+void CpscCourse::setAvailSeats(int aSeats)
 {
-
+    availSeats = aSeats;
 }
-int getCourseNum()
+
+//Sets Open Seats
+void CpscCourse::setOpenSeats(int oSeats)
 {
-
+    openSeats = oSeats;
 }
-int getCourseSect()
+
+//Getters
+
+//Returns Course Name
+string CpscCourse::getCourseName()
 {
-
+    return courseName;
 }
-int getAvailSeat()
+
+//Returns Course Number
+int CpscCourse::getCourseNum()
 {
-
+    return courseNum;
 }
-int getOpenSeats()
+
+//Returns Course Section
+int CpscCourse::getCourseSect()
 {
-
+    return courseSect;
 }
-void printInfo()
+
+//Returns Available Seats
+int CpscCourse::getAvailSeats()
 {
-
+    return availSeats;
 }
+
+//Returns Open Seats
+int CpscCourse::getOpenSeats()
+{
+    return openSeats;
+}
+
+//Prints block of Course information
+void CpscCourse::printInfo()
+{
+    cout << "************************************************" << endl;
+    cout << setw(20) << "Course Name:" << courseName << endl;
+    cout << setw(20) << "Course Number:" << courseNum << endl;
+    cout << setw(20) << "Course Section:" << courseSect << endl;
+    cout << setw(20) << "Available Seats:" << availSeats << endl;
+    cout << setw(20) << "Open Seats:" << openSeats << endl;
+    cout << setw(20) << "Course ID:" << courseID << endl;
+    cout << "************************************************" << endl;
+}
+
+
+
+
