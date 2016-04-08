@@ -97,8 +97,8 @@ void Student::printInfo()
 		count++;
 	}
 	cout << endl << setw(20) << "Name:"
-		 <<  getLastName() << ","
-		 <<  getFirstName() << endl;
+		 <<  Person::getLastName() << ","
+		 <<  Person::getFirstName() << endl;
 	cout << setw(20) << "GPA:"
 		 << GPA << endl;
 	cout << setw(20) << "Category:"
