@@ -32,8 +32,8 @@ void fillStudents(ifstream& inStudent, vector<Student>& stu)
   int term, creditHours;
   float GPA;
 
-  ofstream output;
-  output.open("output.txt");
+  ofstream outInfo;
+  outInfo.open("output.txt");
   
  inStudent.open("studentInfo.txt");
  if(inStudent.is_open())
@@ -43,26 +43,48 @@ void fillStudents(ifstream& inStudent, vector<Student>& stu)
   
   for(int x= 0; x < term; x++)
   {
+   
    Student newStudent;
    stu.push_back(newStudent);
    
-   stu[x].setLastName(getline(inStudent,stuLast));
-   stu[x].setLastName(getline(inStudent,stuFirst));
+   inStudent >> stuLast;
+   inStudent >> stuFirst;
    inStudent >> GPA;
-   stu[x].setGPA(GPA);
-   stu[x].setClassStanding(getline(inStudent,classStanding)));
+   inStudent >> classStanding;
    inStudent >> creditHours;
+   inStudent.ignore(1,'\n');
+
+   stu[x].Person:: setFirstName(stuFirst);
+   stu[x].Person:: setLastName(stuLast);
+   stu[x].setGPA(GPA);
+   stu[x].setClassStanding(classStanding);
    stu[x].setCurCredit(creditHours);
-    inStudent.ignore(1,'\n');
   
 
 
-    output << stu[x].getMaxCredit();
+    stu[x].printInfo();
    }
  }
+
+ inStudent.close();
+ outInfo.close();
 }
+
+
 
 void fillCpscCourse(ifstream& in, vector <CpscCourse>& course) 
 {
+  in.open("cpscInfo.txt");
+  if(in.is_open())
+   {
+
+    string cName;
+    int term, cNum, cSect, aSeat, oSeat;
+
+    in >> term;
+
+    CpscCourse newCourse;
+    course.push_back(newCourse);
+ }
 
 }
