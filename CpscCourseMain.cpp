@@ -5,7 +5,6 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-#include <cstring>
 using namespace std;
 
 /*Prototypes */
@@ -44,7 +43,8 @@ void fillStudents(ifstream& inStudent, vector<Student>& stu)
   
   for(int x= 0; x < term; x++)
   {
-   stu.push_back(Student);
+   Student newStudent;
+   stu.push_back(newStudent);
    
    stu[x].setLastName(getline(inStudent,stuLast));
    stu[x].setLastName(getline(inStudent,stuFirst));
@@ -53,11 +53,11 @@ void fillStudents(ifstream& inStudent, vector<Student>& stu)
    stu[x].setClassStanding(getline(inStudent,classStanding)));
    inStudent >> creditHours;
    stu[x].setCurCredit(creditHours);
-   inStudent.ingore(1,'\n');
+    inStudent.ignore(1,'\n');
   
 
 
-    output << stu[x].printInfo();
+    output << stu[x].getMaxCredit();
    }
  }
 }
