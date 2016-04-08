@@ -18,15 +18,15 @@ int main() {
       vector <Student> studentInfo;
       vector <CpscCourse> courseInfo;
 
-      ifstream inInfo("studentInfo.txt");
-	    ofstream outInfo("output.txt");
-
+      ifstream stuInfo("studentInfo.txt");
+      ifstream corInfo("cpscInfo.txt");
 	
 	/*Call fillStudents and fill CpscCourse */
-  fillStudents(inInfo,studentInfo);
-	
-      inInfo.close();
-      outInfo.close();
+  fillStudents(stuInfo,studentInfo);
+	fillCpscCourse(corInfo,courseInfo);
+
+  stuInfo.close();
+  corInfo.close();
 
 	return 0;	
 }
@@ -38,7 +38,6 @@ void fillStudents(ifstream& inStudent, vector<Student>& stu)
   int term, creditHours;
   float GPA;
 
-  ofstream outInfo("output.txt");
   inStudent >> term;
   
   for(int x= 0; x < term; x++)
@@ -60,9 +59,7 @@ void fillStudents(ifstream& inStudent, vector<Student>& stu)
    stu[x].setClassStanding(classStanding);
    stu[x].setCurCredit(creditHours);
   
-
-
-     stu[x].printInfo();
+   stu[x].printInfo();
   }
 }
 
@@ -70,17 +67,29 @@ void fillStudents(ifstream& inStudent, vector<Student>& stu)
 
 void fillCpscCourse(ifstream& in, vector <CpscCourse>& course) 
 {
-  in.open("cpscInfo.txt");
-  if(in.is_open())
-   {
-
     string cName;
     int term, cNum, cSect, aSeat, oSeat;
 
     in >> term;
 
-    CpscCourse newCourse;
-    course.push_back(newCourse);
- }
+    for(int x = 0; x < term; x++)
+    {
 
+      CpscCourse newCourse;
+      course.push_back(newCourse);
+      in >> cName;
+      in >> cNum;
+      in >> cSect;
+      in >> aSeat;
+      in >> oSeat;
+      in.ignore(1,'\n');
+
+      course[x].setCourseName(cName);
+      course[x].setCourseNum(cNum);
+      course[x].setCourseSect(cSect);
+      course[x].setAvailSeats(aSeat);
+      course[x].setOpenSeats(oSeat);
+
+      course[x].printInfo();
+    }
 }
