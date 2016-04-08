@@ -24,8 +24,10 @@ void Student::setGPA(float gpa)
 		GPA = gpa;
 	}
 	else
+	{
 		cout << "GPA input was invalid range." << endl;
 		GPA = 0;
+	}
 }
 void Student::setClassStanding(string classStanding)
 {
