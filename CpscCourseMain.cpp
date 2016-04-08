@@ -20,6 +20,7 @@ int main() {
 	
 	
 	/*Call fillStudents and fill CpscCourse */
+  fillStudents(studentInfo.txt, StudentInfo);
 	
 
 	return 0;	
