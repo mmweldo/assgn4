@@ -20,7 +20,7 @@ int main() {
 	
 	
 	/*Call fillStudents and fill CpscCourse */
-  fillStudents(studentInfo.txt, StudentInfo);
+  fillStudents(studentInfo, studentInfo);
 	
 
 	return 0;	
