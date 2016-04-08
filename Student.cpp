@@ -104,7 +104,7 @@ void Student::printInfo()
 	cout << left << setw(30) << "Category:";
 	cout << right << classStanding << endl;
 	cout << left << setw(30) << "Maximum Credit:";
-	cout << right << maxCredit << endl;
+	cout << right << getMaxCredit(GPA,classStanding) << endl;
 	cout << left << setw(30) << "Current Credit:";
 	cout << right << curCredit << endl;
 	cout << left;
