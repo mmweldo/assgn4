@@ -96,20 +96,22 @@ void Student::printInfo()
 		cout << "*";
 		count++;
 	}
-	cout << endl << setw(20) << "Name:"
-		 <<  Person::getLastName() << ","
-		 <<  Person::getFirstName() << endl;
-	cout << setw(20) << "GPA:"
-		 << GPA << endl;
-	cout << setw(20) << "Category:"
-		 << classStanding << endl;
-	cout << setw(20) << "Maximum Credit:"
-		 << maxCredit << endl;
-	cout << setw(20) << "Current Credit:"
-		 << curCredit << endl;
+	cout << endl << left << setw(20) << "Name:";
+	cout << right << Person::getLastName() << ",";
+	cout << right << Person::getFirstName() << endl;
+	cout << left << setw(20) << "GPA:";
+	cout << right << GPA << endl;
+	cout << left << setw(20) << "Category:";
+	cout << right << classStanding << endl;
+	cout << left << setw(20) << "Maximum Credit:";
+	cout << right << maxCredit << endl;
+	cout << left << setw(20) << "Current Credit:";
+	cout << right << curCredit << endl;
+	cout << left;
 	while(count < 48)
 	{
 		cout << "*";
 		count++;
 	}
+	cout << endl;
 }
