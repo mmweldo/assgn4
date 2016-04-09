@@ -1,7 +1,6 @@
 #include <iostream>
 #include "Person.h"
 #include <string>
-#include <cstring>
 using namespace std;
 
 Person::Person()
@@ -16,7 +15,6 @@ Person::Person(string first, string last)
 }
 Person::~Person()
 {
-   cout << "Person object is being destructed!!!" << endl;
 }
 void Person::setFirstName(string firstn)
 {
