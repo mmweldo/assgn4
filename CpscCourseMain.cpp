@@ -88,8 +88,9 @@ void fillCpscCourse(ifstream& in, vector <CpscCourse>& course)
 
       /*This calls setters, this doesnt call the overloarded constructor for course
       	This means that the static int doesnt increment. To change, delete the course[x]
-      	setter functions up to print and move the newCourse object creation to bottom along
-      	wit the pushback call for putting it at the end of the vector
+      	setter functions up to print and move the newCourse object creation to bottom 
+        and put the variables from in into it to match the overloaded constructor call
+        also put the pushback call for putting it at the end of the vector uunder the object creation
       */
       course[x].setCourseName(cName);
       course[x].setCourseNum(cNum);
