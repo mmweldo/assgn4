@@ -5,6 +5,11 @@
 using namespace std;
 
 //Initialize static CourseID
+
+/*	The static int needs to be set to -1, because otherwise
+	it will print course numbers 1,2,3 not 0,1,2
+*/
+
 static int courseID = 0;
 
 //Default Constructor
@@ -65,6 +70,8 @@ CpscCourse::CpscCourse(string cName, int cNum, int cSect, int aSeats, int oSeats
 //Destructor
 CpscCourse::~CpscCourse()
 {
+	/*Comment out the deconstructor
+	*/
     cout << "CpscCourse Object is destroyed." << endl;
 }
 
@@ -135,6 +142,9 @@ int CpscCourse::getOpenSeats()
 //Prints block of Course information
 void CpscCourse::printInfo()
 {
+	/*	Delete 13 stars so the overhang int as apparent, it will then
+		match the student output as well
+	*/
     cout << "************************************************" << endl;
     cout << setw(20) << "Course Name:" << courseName << endl;
     cout << setw(20) << "Course Number:" << courseNum << endl;
