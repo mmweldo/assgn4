@@ -53,14 +53,13 @@ void fillStudents(ifstream& inStudent, vector<Student>& stu)
    inStudent >> creditHours;
    inStudent.ignore(1,'\n');
 
-   /*Below the vector calls the setter functions, this doesnt matter at all for
-   student, you can keep it or change it similar to course*/
    stu[x].Person:: setFirstName(stuFirst);
    stu[x].Person:: setLastName(stuLast);
    stu[x].setGPA(GPA);
    stu[x].setClassStanding(classStanding);
    stu[x].setCurCredit(creditHours);
-  
+
+   
    stu[x].printInfo();
   }
 }
@@ -77,8 +76,6 @@ void fillCpscCourse(ifstream& in, vector <CpscCourse>& course)
     for(int x = 0; x < term; x++)
     {
 
-      CpscCourse newCourse;
-      course.push_back(newCourse);
       in >> cName;
       in >> cNum;
       in >> cSect;
@@ -86,17 +83,8 @@ void fillCpscCourse(ifstream& in, vector <CpscCourse>& course)
       in >> oSeat;
       in.ignore(1,'\n');
 
-      /*This calls setters, this doesnt call the overloarded constructor for course
-      	This means that the static int doesnt increment. To change, delete the course[x]
-      	setter functions up to print and move the newCourse object creation to bottom 
-        and put the variables from in into it to match the overloaded constructor call
-        also put the pushback call for putting it at the end of the vector uunder the object creation
-      */
-      course[x].setCourseName(cName);
-      course[x].setCourseNum(cNum);
-      course[x].setCourseSect(cSect);
-      course[x].setAvailSeats(aSeat);
-      course[x].setOpenSeats(oSeat);
+      CpscCourse newCourse(cName,cNum,cSect,aSeat,oSeat);
+      course.push_back(newCourse);
 
       course[x].printInfo();
     }
