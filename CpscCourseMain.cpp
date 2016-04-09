@@ -42,10 +42,7 @@ void fillStudents(ifstream& inStudent, vector<Student>& stu)
   
   for(int x= 0; x < term; x++)
   {
-   
-   Student newStudent;
-   stu.push_back(newStudent);
-   
+
    inStudent >> stuLast;
    inStudent >> stuFirst;
    inStudent >> GPA;
@@ -53,12 +50,8 @@ void fillStudents(ifstream& inStudent, vector<Student>& stu)
    inStudent >> creditHours;
    inStudent.ignore(1,'\n');
 
-   stu[x].Person:: setFirstName(stuFirst);
-   stu[x].Person:: setLastName(stuLast);
-   stu[x].setGPA(GPA);
-   stu[x].setClassStanding(classStanding);
-   stu[x].setCurCredit(creditHours);
-
+   Student newStudent(stuFirst,stuLast,GPA,classStanding,0,creditHours);
+   stu.push_back(newStudent);
    
    stu[x].printInfo();
   }
