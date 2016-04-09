@@ -13,20 +13,20 @@ void fillCpscCourse(ifstream&, vector<CpscCourse>&);
 
 
 int main() {
-    /*Suggestion: create two vectors to hold the information pertaining to 
-      CpscCourse and Student*/
-      vector <Student> studentInfo;
-      vector <CpscCourse> courseInfo;
+	/*Suggestion: create two vectors to hold the information pertaining to 
+	CpscCourse and Student*/
+	vector <Student> studentInfo;
+	vector <CpscCourse> courseInfo;
 
-      ifstream stuInfo("studentInfo.txt");
-      ifstream corInfo("cpscInfo.txt");
-	
+	ifstream stuInfo("studentInfo.txt");
+	ifstream corInfo("cpscInfo.txt");
+
 	/*Call fillStudents and fill CpscCourse */
-  fillStudents(stuInfo,studentInfo);
+	fillStudents(stuInfo,studentInfo);
 	fillCpscCourse(corInfo,courseInfo);
 
-  stuInfo.close();
-  corInfo.close();
+	stuInfo.close();
+	corInfo.close();
 
 	return 0;	
 }
@@ -53,6 +53,8 @@ void fillStudents(ifstream& inStudent, vector<Student>& stu)
    inStudent >> creditHours;
    inStudent.ignore(1,'\n');
 
+   /*Below the vector calls the setter functions, this doesnt matter at all for
+   student, you can keep it or change it similar to course*/
    stu[x].Person:: setFirstName(stuFirst);
    stu[x].Person:: setLastName(stuLast);
    stu[x].setGPA(GPA);
@@ -84,6 +86,11 @@ void fillCpscCourse(ifstream& in, vector <CpscCourse>& course)
       in >> oSeat;
       in.ignore(1,'\n');
 
+      /*This calls setters, this doesnt call the overloarded constructor for course
+      	This means that the static int doesnt increment. To change, delete the course[x]
+      	setter functions up to print and move the newCourse object creation to bottom along
+      	wit the pushback call for putting it at the end of the vector
+      */
       course[x].setCourseName(cName);
       course[x].setCourseNum(cNum);
       course[x].setCourseSect(cSect);
